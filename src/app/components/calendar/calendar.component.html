@@ -1,0 +1,148 @@
+<h2 class="title">Timetable</h2>
+
+<div class="cal__container">
+  <div class="cal__timetable">
+    <div class="event-block"
+         *ngFor="let event of events_render"
+         [style.top]="event.start"
+         [style.height]="event.duration"
+         [style.width]="event.width"
+         [style.left]="event.left"
+    >
+      {{ event.title }}
+    </div>
+    <div class="timetable__time-sharp">
+      8:00
+    </div>
+    <div class="timetable__time-half">
+      8:30
+    </div>
+    <div class="timetable__time-sharp">
+      9:00
+    </div>
+    <div class="timetable__time-half">
+      9:30
+    </div>
+    <div class="timetable__time-sharp">
+      10:00
+    </div>
+    <div class="timetable__time-half">
+      10:30
+    </div>
+    <div class="timetable__time-sharp">
+      11:00
+    </div>
+    <div class="timetable__time-half">
+      11:30
+    </div>
+    <div class="timetable__time-sharp">
+      12:00
+    </div>
+    <div class="timetable__time-half">
+      12:30
+    </div>
+    <div class="timetable__time-sharp">
+      13:00
+    </div>
+    <div class="timetable__time-half">
+      13:30
+    </div>
+    <div class="timetable__time-sharp">
+      14:00
+    </div>
+    <div class="timetable__time-half">
+      14:30
+    </div>
+    <div class="timetable__time-sharp">
+      15:00
+    </div>
+    <div class="timetable__time-half">
+      15:30
+    </div>
+    <div class="timetable__time-sharp">
+      16:00
+    </div>
+    <div class="timetable__time-half">
+      16:30
+    </div>
+    <div class="timetable__time-sharp">
+      17:00
+    </div>
+  </div>
+</div>
+
+
+<form class="mt-4" novalidate (ngSubmit)="onSubmit()">
+  <div class="form-group mb-3">
+    <h2>Enter the name of the event</h2>
+    <input type="text"
+           class="form-control"
+           #title="ngModel"
+           name="title"
+           [(ngModel)]="event.title"
+           required
+    >
+  </div>
+
+  <h2>Enter start time</h2>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="start_hours">hours</span>
+    </div>
+    <input type="text"
+           class="form-control"
+           aria-label="Small"
+           aria-describedby="start_hours"
+           #start_hours="ngModel"
+           name="start_hours"
+           [(ngModel)]="event.start_hours"
+           required
+    >
+  </div>
+
+  <div class="input-group input-group-sm mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="start_minutes">minutes</span>
+    </div>
+    <input type="text"
+           class="form-control"
+           aria-label="Small"
+           aria-describedby="start_minutes"
+           #start_minutes="ngModel"
+           name="start_minutes"
+           [(ngModel)]="event.start_minutes"
+           required
+    >
+  </div>
+  <div class="form-group mb-3">
+    <h2>Enter duration of the event</h2>
+    <input type="text"
+           class="form-control"
+           #duration="ngModel"
+           name="duration"
+           [(ngModel)]="event.duration"
+           required
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary">Add event</button>
+
+</form>
+
+<form class="mt-4" novalidate (ngSubmit)="removeEvent()">
+  <div class="form-group mb-3">
+    <h2>Enter the name of event you want to remove</h2>
+    <input type="text"
+           class="form-control"
+           #removed_event="ngModel"
+           name="removed_event"
+           [(ngModel)]="removed"
+           required
+    >
+  </div>
+  <button type="submit" class="btn btn-danger">Remove event</button>
+</form>
+
+
+

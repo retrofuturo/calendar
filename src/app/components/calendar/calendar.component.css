@@ -1,0 +1,55 @@
+
+*{
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  margin: 15px 0;
+  font-weight: 700;
+}
+.cal__timetable{
+  position: relative;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  color: darkgrey;
+  width: 247px;
+}
+
+.timetable__time-sharp{
+  font-size: 16px;
+  border-top: 1px solid darkgrey;
+  height: 30px;
+}
+
+.timetable__time-half{
+  font-size: 12px;
+  height: 30px;
+}
+
+.event-block{
+  position: absolute;
+  background-color: #E2ECF5;
+  border-left: 2px solid #6E9ECF;
+  left: 47px;
+  width: 200px;
+  padding: 4px;
+  font-size: 14px;
+  color: #000;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+form{
+  margin: 15px auto;
+  width: 400px;
+}
+
+form h2{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
